@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.lifecycle.MainActivity">
+    <item
+        android:id="@+id/shareMenuButton"
+        android:enabled="true"
+        android:icon="?android:attr/actionModeShareDrawable"
+        android:title="@string/share"
+        android:visible="true"
+        app:showAsAction="ifRoom"
+        tools:targetApi="lollipop" />
+</menu>

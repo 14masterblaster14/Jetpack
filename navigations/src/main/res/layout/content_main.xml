@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto"
+            android:padding="4dp"
+            android:text="@string/name"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toTopOf="@id/dice_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="?attr/textAppearanceHeadline1"/>
+
+        <ImageView
+            android:id="@+id/dice_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/showing_dice_image"
+            app:layout_constraintBottom_toTopOf="@id/roll_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text_view"
+            app:srcCompat="@drawable/empty_dice"
+            tools:src="@drawable/dice_1" />
+
+        <Button
+            android:id="@+id/roll_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/roll_label"
+            style="@style/Widget.AppCompat.Button.Colored"
+            app:layout_constraintBottom_toTopOf="@id/branch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dice_image_view" />
+
+        <AutoCompleteTextView
+            android:id="@+id/branch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/enter_your_branch"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roll_button" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:text="@string/Description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/branch" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+    <!--             #    Right/left versus start/end    #
+
+     "Right" and "left" always refer to the right and left sides of the screen,
+     whether your app uses a left-to-right (LTR) flow or a right-to-left (RTL) flow.
+     "Start" and "end" always refer to the start and end of the flow:
+
+     For a LTR flow, start = left and end=right.
+     For a RTL flow, start=right and end=left.
+     If your app targets API level 17 (Android 4.2) or higher:
+
+     Use "start" and "end" instead of "left" and "right".
+     For example, android:layout_marginLeft should become android:layout_marginStart
+     to support RTL languages.
+     If you want your app to work with versions lower than Android 4.2; that is,
+     if the app's targetSdkVersion or minSdkVersion is 16 or lower:
+
+     Add "start" and end" in addition to "left" and "right".
+     For example, use both android:paddingLeft and android:paddingStart.
+
+                             #    Fonts    #
+
+     In Design mode : In the Attributes pane, search for "fontFamily".
+     In the fontFamily field, click the drop-down arrow, scroll to the bottom of the list,
+     and select More Fonts.
+     In the Resources dialog, search for rob and choose Roboto. In the Preview list,
+     select Regular.
+     Select the Add font to project radio button.
+     Click OK.
+
+                            #    Constraints Layout    #
+     Tip: Baseline constraint and the bottom constraint are mutually exclusive,
+     so you can't create both for the same view.
+     If you add a bottom constraint and then a baseline constraint,
+     the Layout Editor removes the bottom constraint.
+
+    Chain styles
+    Chain styles define the way the chained views are spread out and aligned.
+    You style a chain by assigning a chain style attribute, adding weight,
+    or setting bias on the views.
+
+    There are three chains styles:
+
+    Spread:
+        This is the default style. Views are evenly spread in the available space,
+        after margins are accounted for.
+
+
+    Spread inside:
+        The first and the last views are attached to the parent on each end of the chain.
+        The rest of the views are evenly spread in the available space.
+
+
+    Packed:
+        The viewS are packed together, after margins are accounted for.
+        You can then adjust the position of the whole chain by changing the bias
+        of the chain's head view.
+
+    Packed chain
+    Packed chain with bias
+
+    Weighted:
+        The views are resized to fill up all the space, based on the values set in the
+        layout_constraintHorizontal_weight or layout_constraintVertical_weight attributes.
+        For example, imagine a chain containing three views, A, B, and C.
+        View A uses a weight of 1. Views B and C each use a weight of 2.
+        The space occupied by views B and C is twice that of view A, as shown below.
+
+
+    To add a chain style to a chain, set the layout_constraintHorizontal_chainStyle
+    or the layout_constraintVertical_chainStyle attribute for the head of the chain.
+    You can add chain styles in the Layout Editor, which you learn in this task.
+
+     -->
