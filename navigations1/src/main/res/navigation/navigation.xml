@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigations1.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+
+        <!-- TODO STEP 7.1 - Add action with transitions -->
+        <!--<action-->
+        <!--android:id="@+id/next_action"-->
+        <!--app:destination="@+id/flow_step_one_dest"-->
+        <!--app:enterAnim="@anim/slide_in_right"-->
+        <!--app:exitAnim="@anim/slide_out_left"-->
+        <!--app:popEnterAnim="@anim/slide_in_left"-->
+        <!--app:popExitAnim="@anim/slide_out_right" />-->
+        <!-- TODO END STEP 7.1 -->
+        <action
+            android:id="@+id/action_homeFragment_to_flowStep1Fragment"
+            app:destination="@id/flowStep1Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flowStep1Fragment"
+        android:name="com.example.navigations1.FlowStepFragment"
+        android:label="fragment_flow_step1"
+        tools:layout="@layout/fragment_flow_step1" >
+
+        <argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="1"/>
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flowStep2Fragment">
+        </action>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/flowStep2Fragment"
+        android:name="com.example.navigations1.FlowStepFragment"
+        android:label="fragment_flow_step2"
+        tools:layout="@layout/fragment_flow_step2" >
+
+        <argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="2"/>
+
+        <action
+            android:id="@+id/next_action"
+            app:popUpTo="@id/homeFragment">
+        </action>
+    </fragment>
+
+    <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
+    <fragment
+    android:id="@+id/settings_dest"
+    android:name="com.example.navigations1.SettingsFragment"
+    android:label="@string/settings"
+    tools:layout="@layout/fragment_settings" />
+    <!-- TODO END STEP 4 -->
+
+
+    <fragment
+        android:id="@+id/deeplinkFragment"
+        android:name="com.example.navigations1.DeeplinkFragment"
+        android:label="fragment_deeplink"
+        tools:layout="@layout/fragment_deeplink" >
+
+        <argument
+            android:name="myarg"
+            android:defaultValue="Android!"/>
+        <!-- TODO STEP 11.1 - Add a deep link to www.example.com/{myarg}/ -->
+
+        <deepLink app:uri="www.example.com/{myarg}" />
+
+        <!-- TODO END STEP 11.1 -->
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.navigations1.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/shoppingFragment"
+        android:name="com.example.navigations1.ShoppingFragment"
+        android:label="fragment_shopping"
+        tools:layout="@layout/fragment_shopping" />
+
+</navigation>

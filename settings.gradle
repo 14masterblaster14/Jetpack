@@ -1,2 +1,2 @@
-include ':navigations', ':lifecycle', ':viewmodellivedata', ':room', ':network', ':repositoryworkmanager'
+include ':navigations', ':lifecycle', ':viewmodellivedata', ':room', ':network', ':repositoryworkmanager', ':navigations1'
 rootProject.name='Jetpack'

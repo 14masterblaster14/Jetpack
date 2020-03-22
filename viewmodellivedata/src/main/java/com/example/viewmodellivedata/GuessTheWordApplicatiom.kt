@@ -2,6 +2,7 @@ package com.example.viewmodellivedata
 
 import android.app.Application
 import android.os.Debug
+import androidx.databinding.library.BuildConfig
 import timber.log.Timber
 
 class GuessTheWordApplicatiom : Application() {

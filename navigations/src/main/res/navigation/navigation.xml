@@ -57,16 +57,19 @@
             android:name="numCorrect"
             app:argType="integer" />
     </fragment>
+
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.jetpack.game.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.example.jetpack.game.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.jetpack.MainActivity"

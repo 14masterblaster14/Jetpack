@@ -110,7 +110,7 @@ class OverviewViewModel : ViewModel() {
     fun displayPropertyDetails(marsProperty: MarsProperty){
         _nevigateToSelectedProperty.value = marsProperty
     }
-
+e
     fun displayPropertyDetailsComplete() {
         //  You need this to mark the navigation state to complete, and to avoid the navigation
         //  being triggered again when the user returns from the detail view.
