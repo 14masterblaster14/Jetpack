@@ -194,7 +194,7 @@ O/P :
         }
         /*
   O/P :
-  ==> It will return 120 after 3 sec
+  ==> It will return 120 after 3 sec.
 
   */
 
