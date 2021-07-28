@@ -28,8 +28,12 @@ android {
     }
 
     // Enables data binding.
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+
+        buildFeatures {           // New Way
+        dataBinding = true
     }
 
 }

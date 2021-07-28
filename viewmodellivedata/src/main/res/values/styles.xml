@@ -16,6 +16,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
     <!-- Button Styles -->
     <style name="GoButton" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/ok_green_color</item>

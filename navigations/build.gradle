@@ -14,8 +14,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+
+        buildFeatures {           // New Way
+        dataBinding = true
     }
 
     defaultConfig {
@@ -58,6 +62,9 @@ dependencies {
     def navigationVersion = '1.0.0'
     implementation"android.arch.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Timber
+
 
 
 }

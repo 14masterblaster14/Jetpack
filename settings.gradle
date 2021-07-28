@@ -1,2 +1,5 @@
 include ':navigations', ':lifecycle', ':viewmodellivedata', ':room', ':network', ':repositoryworkmanager', ':navigations1'
 rootProject.name='Jetpack'
+include ':navigations22'
+include ':coroutines'
+include ':coroutines1scopes'

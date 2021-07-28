@@ -11,9 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/coroutines" />
+            <option value="$PROJECT_DIR$/coroutines1scopes" />
             <option value="$PROJECT_DIR$/lifecycle" />
             <option value="$PROJECT_DIR$/navigations" />
             <option value="$PROJECT_DIR$/navigations1" />
+            <option value="$PROJECT_DIR$/navigations22" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/repositoryworkmanager" />
             <option value="$PROJECT_DIR$/room" />

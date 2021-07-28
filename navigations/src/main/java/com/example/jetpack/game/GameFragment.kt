@@ -1,16 +1,13 @@
 package com.example.jetpack.game
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-
 import com.example.jetpack.R
 import com.example.jetpack.databinding.FragmentGameBinding
 
@@ -79,11 +76,6 @@ class GameFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = Math.min((questions.size + 1) / 2, 3)
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -165,15 +157,6 @@ class GameFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title =
             getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
 
-    }
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-    override fun onDetach() {
-        super.onDetach()
     }
 
 
